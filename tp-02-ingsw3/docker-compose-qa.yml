@@ -1,9 +1,6 @@
 services:
   db-qa:
     image: leomorabito02/database:v1.0
-    build:
-      context: ./db
-      dockerfile: Dockerfile
     container_name: db-app-qa
     restart: always
     networks:
@@ -24,9 +21,6 @@ services:
 
   backend-qa:
     image: leomorabito02/backend:v1.0
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
     container_name: backend-app-qa
     restart: always
     networks:
@@ -45,8 +39,6 @@ services:
 
   frontend-qa:
     image: leomorabito02/frontend:v1.0
-    build:
-      context: ./frontend
     container_name: frontend-app-qa
     networks:
       - app-network-qa
